@@ -9,7 +9,7 @@ export default function GameLayout() {
 			<div className='h-full flex justify-center items-center col-start-1 row-start-1 bg-taupe-400'>
 				<p>Navigation</p>
 			</div>
-			<div className='h-full col-span-4 col-start-2 row-start-1 '>
+			<div className='h-full col-span-4 col-start-2 row-start-1'>
 				<GameHeader />
 			</div>
 			<aside className='h-full row-span-14 row-start-2  bg-blue-800'>
