@@ -5,5 +5,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-	return 
+	return (
+		<div className=''>
+			<h1>Hearthborn</h1>
+		</div>
+	)
 }
