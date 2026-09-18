@@ -10,11 +10,7 @@ export function meta({}: Route.MetaArgs) {
 const player = new Player('Player', 100, 100, 50, 50, 100)
 export default function Home() {
 	return (
-		<div
-			className='h-full bg-cover bg-center'
-			style={{
-				backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url(${pergaminTexture})`,
-			}}>
+		<div className='h-full bg-cover bg-center'>
 			<Button variant='default' size='lg'>
 				Heal
 			</Button>
