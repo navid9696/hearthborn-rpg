@@ -15,5 +15,10 @@ export default defineConfig({
 			usePolling: true,
 			interval: 100,
 		},
+		hmr: {
+			host: 'localhost',
+			port: 5173,
+			protocol: 'ws',
+		},
 	},
 })
