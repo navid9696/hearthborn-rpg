@@ -16,7 +16,7 @@ export default function Home() {
 			</Button>
 			<Button
 				onClick={() => {
-					player.takeDamage(-1)
+					player.takeDamage(1);
 					console.log(player.health)
 				}}
 				variant='default'

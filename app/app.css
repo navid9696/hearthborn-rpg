@@ -4,8 +4,9 @@
 
 @theme {
 	--font-sans:
-		'Cherry Bomb One', 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Sour Gummy', 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-display: 'Cherry Bomb One', 'Sour Gummy', ui-sans-serif, system-ui, sans-serif;
 }
 
 html,
@@ -14,8 +15,9 @@ body {
 }
 
 @theme inline {
-	--font-heading: var(--font-sans);
-	--font-sans: 'Cherry Bomb One', sans-serif;
+	--font-heading: var(--font-display);
+	--font-sans: 'Sour Gummy', sans-serif;
+	--font-display: 'Cherry Bomb One', sans-serif;
 	--color-page: var(--page-bg);
 	--color-panel: var(--panel-bg);
 	--color-panel-raised: var(--panel-raised-bg);
@@ -32,33 +34,25 @@ body {
 	--color-state-warning: var(--state-warning);
 	--color-state-danger: var(--state-danger);
 	--color-state-danger-bg: var(--state-danger-bg);
-	--radius-sm: calc(var(--radius) * 0.6);
-	--radius-md: calc(var(--radius) * 0.8);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) * 1.4);
-	--radius-2xl: calc(var(--radius) * 1.8);
-	--radius-3xl: calc(var(--radius) * 2.2);
-	--radius-4xl: calc(var(--radius) * 2.6);
 }
 
 :root {
-	--page-bg: #f5efe2;
-	--panel-bg: #c99f6a;
-	--panel-raised-bg: #8a5a35;
-	--text-primary: #2d1f18;
-	--text-secondary: #513c32;
-	--text-muted: #7a5d4d;
-	--border-default: #7a4d30;
-	--border-focus: #e0a857;
-	--action-bg: #8a5a35;
-	--action-text: #fffaf0;
-	--action-hover-bg: #c78352;
-	--surface-hover-bg: #e8dcc1;
-	--state-success: #4f7a57;
-	--state-warning: #d59d3d;
-	--state-danger: #b84b3b;
-	--state-danger-bg: rgb(184 75 59 / 10%);
-	--radius: 0.75rem;
+	--page-bg: #2f221b;
+	--panel-bg: #402d25;
+	--panel-raised-bg: #4d382d;
+	--text-primary: #f7ddb1;
+	--text-secondary: #e8c285;
+	--text-muted: #d19b67;
+	--border-default: #9b6851;
+	--border-focus: #e3b66b;
+	--action-bg: #8d5b3d;
+	--action-text: #f5dfc4;
+	--action-hover-bg: #a76b46;
+	--surface-hover-bg: #5d4338;
+	--state-success: #7d9470;
+	--state-warning: #d89d4d;
+	--state-danger: #c96c5f;
+	--state-danger-bg: rgb(201 108 95 / 15%);
 }
 
 @layer base {
@@ -70,5 +64,16 @@ body {
 	}
 	html {
 		@apply font-sans;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	button,
+	a {
+		@apply font-display;
 	}
 }

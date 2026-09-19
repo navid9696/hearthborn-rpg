@@ -7,8 +7,8 @@ import pergaminTexture from '../../assets/ui/pergamin.png'
 export default function GameLayout() {
 	return (
 		<div className='h-dvh grid grid-cols-5 grid-rows-16 gap-0'>
-			<div className='h-full flex justify-center items-center col-start-1 row-start-1 bg-taupe-300 border-b-6 border-r-6 border-taupe-800'>
-				<p>Navigation</p>
+			<div className='h-full flex justify-center items-center col-start-1 row-start-1 bg-panel-bg border-b-6 border-r-6 border-border-default'>
+				<h6>Navigation</h6>
 			</div>
 			<div className='h-full col-span-4 col-start-2 row-start-1'>
 				<GameHeader />
@@ -21,7 +21,7 @@ export default function GameLayout() {
 				style={{ backgroundImage: `url(${pergaminTexture})` }}>
 				<Outlet />
 			</main>
-			<div className='h-full flex justify-center items-center col-start-1 row-start-16 bg-taupe-300 border-t-6 border-r-6 border-taupe-800'>
+			<div className='h-full flex justify-center items-center col-start-1 row-start-16 bg-panel-bg border-t-6 border-r-6 border-border-default'>
 				<span className='mr-2'>Player</span>
 				<span>Lv.10</span>
 			</div>
