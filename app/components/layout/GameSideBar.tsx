@@ -1,25 +1,36 @@
-import { Button } from '../ui/button'
+import { NavLink } from 'react-router'
+import { buttonVariants } from '../ui/button'
 
 export default function GameSideBar() {
 	return (
-		<div className='h-full flex flex-col items-center justify-center gap-4 p-4'>
-			<ul className='flex flex-col items-center justify-center gap-4'>
+		<nav className='relative z-10 h-full flex flex-col items-center justify-center gap-4 p-4'>
+			<ul className='flex flex-col items-center justify-center gap-y-8'>
 				<li>
-					<Button>World</Button>
+					<NavLink to='/world' className={buttonVariants({ variant: 'default', size: '3xl' })}>
+						World
+					</NavLink>
 				</li>
 				<li>
-					<Button>Inventory</Button>
+					<NavLink to='/inventory' className={buttonVariants({ variant: 'default', size: '3xl' })}>
+						Inventory
+					</NavLink>
 				</li>
 				<li>
-					<Button>Crafting</Button>
+					<NavLink to='/crafting' className={buttonVariants({ variant: 'default', size: '3xl' })}>
+						Crafting
+					</NavLink>
 				</li>
 				<li>
-					<Button>Quests</Button>
+					<NavLink to='/quests' className={buttonVariants({ variant: 'default', size: '3xl' })}>
+						Quests
+					</NavLink>
 				</li>
 				<li>
-					<Button>Character</Button>
+					<NavLink to='/character' className={`${buttonVariants({ variant: 'default', size: '3xl' })}`}>
+						Character
+					</NavLink>
 				</li>
 			</ul>
-		</div>
+		</nav>
 	)
 }

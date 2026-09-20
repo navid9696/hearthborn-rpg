@@ -1,11 +1,9 @@
 import { IconDroplet, IconHeart, IconApple, IconBatteryVertical } from '@tabler/icons-react'
-import woodenTexture from '../../../assets/ui/wooden-texture.png'
+
 
 export default function GameHeader() {
 	return (
-		<header
-			className='h-full flex items-center justify-evenly gap-4 bg-cover bg-top p-4'
-			style={{ backgroundImage: `url(${woodenTexture})` }}>
+		<header className='h-full flex items-center justify-evenly gap-4 p-4'>
 			<IconHeart size={40} stroke={1} fill='currentColor' className='text-red-900 fill-red-600' />
 			<IconBatteryVertical size={45} stroke={1} fill='currentColor' className='text-yellow-800 fill-yellow-500' />
 			<IconApple size={45} stroke={1} fill='currentColor' className='text-green-800 fill-green-500' />

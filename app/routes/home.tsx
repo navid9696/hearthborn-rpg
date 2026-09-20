@@ -1,30 +1,43 @@
 import { Button } from '~/components/ui/button'
 import type { Route } from './+types/home'
 import { Player } from '~/game/entities/Player'
-import pergaminTexture from '../../assets/ui/pergamin.png'
+import { Enemy } from '~/game/entities/Enemy'
 
 export function meta({}: Route.MetaArgs) {
 	return [{ title: 'New React Router App' }, { name: 'description', content: 'Welcome to React Router!' }]
 }
-
+const enemy = new Enemy(1, 'Enemy', 100, 100)
 const player = new Player('Player', 100, 100, 50, 50, 100)
 export default function Home() {
 	return (
-		<div className='h-full bg-cover bg-center' style={{ backgroundImage: `url(${pergaminTexture})` }}>
-			<Button variant='default' size='lg'>
+		<div className='h-full'>
+			<Button
+				onClick={() => {
+					player.heal(10)
+					console.log(player.health)
+				}}
+				variant='default'
+				size='lg'>
 				Heal
 			</Button>
 			<Button
 				onClick={() => {
-					player.takeDamage(1);
+					player.takeDamage(1)
 					console.log(player.health)
 				}}
 				variant='default'
 				size='lg'>
 				Receive Damage
 			</Button>
-			<Button variant='default' size='lg'>
-				Increase Max Health
+			<Button
+				onClick={() => {
+					enemy.receiveDmg2(2)
+					console.log(player.health)
+					console.log(enemy.health)
+				}}
+				variant='default'
+				size='lg'>
+				Enemy attack
 			</Button>
 		</div>
 	)

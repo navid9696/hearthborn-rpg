@@ -73,7 +73,10 @@ body {
 	h5,
 	h6,
 	button,
-	a {
+	a,
+	span
+	 {
 		@apply font-display;
+		font-weight: 500;
 	}
 }
