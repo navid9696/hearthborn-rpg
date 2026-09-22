@@ -31,9 +31,8 @@ export default function Home() {
 			</Button>
 			<Button
 				onClick={() => {
-					enemy.receiveDmg2(2)
+					enemy.receiveDmg2((player.health -= 1))
 					console.log(player.health)
-					console.log(enemy.health)
 				}}
 				variant='default'
 				size='lg'>

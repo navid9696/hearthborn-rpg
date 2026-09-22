@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router'
-import { buttonVariants } from '../ui/button'
+import { buttonVariants } from '../../ui/button'
 
 export default function GameSideBar() {
 	return (
