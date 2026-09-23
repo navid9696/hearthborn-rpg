@@ -12,6 +12,7 @@ import { Drawer, DrawerContent } from '~/components/ui/drawer'
 
 export default function GameLayout() {
 	const [openDrawer, setOpenDrawer] = useState(false)
+	const { isMobile, isLoading } = useIsMobile()
 
 	const handleDrawer = () => {
 		setOpenDrawer(prev => !prev)
@@ -24,13 +25,21 @@ export default function GameLayout() {
 				style={{ backgroundImage: `url(${woodenTexture})` }}>
 				<GameHeader onMenuClick={handleDrawer} />
 			</div>
-			<Drawer open={openDrawer} onOpenChange={setOpenDrawer} swipeDirection='left'>
-				<DrawerContent className='h-full'>
-					<aside className=' row-span-16 row-start-1 flex-col bg-cover lg:flex'>
-						<AsideLayout />
-					</aside>
-				</DrawerContent>
-			</Drawer>
+
+			<aside className={`${isMobile ? 'hidden' : 'block'} h-full row-span-16 row-start-1 flex-col bg-cover lg:flex`}>
+				<AsideLayout />
+			</aside>
+			{isMobile && (
+				<Drawer open={openDrawer} onOpenChange={setOpenDrawer} swipeDirection='left'>
+					<DrawerContent className='h-full'>
+						<aside
+							className={`${openDrawer ? 'block' : 'block'} h-full row-span-16 row-start-1 flex-col bg-cover lg:flex`}>
+							<AsideLayout />
+						</aside>
+					</DrawerContent>
+				</Drawer>
+			)}
+
 			<main
 				className='h-full col-span-1 row-span-14 col-start-1 row-start-2 bg-cover lg:col-span-4 lg:col-start-2'
 				style={{ backgroundImage: `url(${pergaminTexture})` }}>

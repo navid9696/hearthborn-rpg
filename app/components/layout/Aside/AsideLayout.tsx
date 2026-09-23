@@ -9,7 +9,7 @@ export default function AsideLayout() {
 			<div className='flex h-16 shrink-0 items-center justify-center border-b-6 border-border-default bg-panel'>
 				<h6>Navigation</h6>
 			</div>
-			<div className='relative z-10 min-h-0 flex-1 bg-cover' style={{ backgroundImage: `url(${woodenTextureAside})` }}>
+			<div className='relative z-10 flex-1 bg-cover' style={{ backgroundImage: `url(${woodenTextureAside})` }}>
 				<GameSideBar />
 				<div className='pointer-events-none absolute inset-0 z-0 bg-black/60'></div>
 			</div>
