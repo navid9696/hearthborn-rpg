@@ -6,7 +6,7 @@ import { Drawer, DrawerContent } from '~/components/ui/drawer'
 export default function AsideLayout() {
 	return (
 		<>
-			<div className='flex h-16 shrink-0 items-center justify-center border-b-6 border-border-default bg-panel'>
+			<div className='flex h-16 shrink-0 items-center justify-center border-b-2 border-border-default bg-panel'>
 				<h6>Navigation</h6>
 			</div>
 			<div className='relative z-10 flex-1 bg-cover' style={{ backgroundImage: `url(${woodenTextureAside})` }}>

@@ -1,9 +1,7 @@
 import { Outlet } from 'react-router'
 import GameFooter from '~/components/layout/GameFooter'
-import GameHeader from '~/components/layout/GameHeader'
-import GameSideBar from '~/components/layout/Aside/GameSideBar'
+import GameHeader from '~/components/layout/Header/GameHeader'
 import pergaminTexture from '../../assets/ui/pergamin.png'
-import woodenTextureAside from '../../assets/ui/wooden-aside.webp'
 import woodenTexture from '../../assets/ui/wooden-texture.png'
 import { useState } from 'react'
 import AsideLayout from '~/components/layout/Aside/AsideLayout'
@@ -12,7 +10,7 @@ import { Drawer, DrawerContent } from '~/components/ui/drawer'
 
 export default function GameLayout() {
 	const [openDrawer, setOpenDrawer] = useState(false)
-	const { isMobile, isLoading } = useIsMobile()
+	const { isMobile } = useIsMobile()
 
 	const handleDrawer = () => {
 		setOpenDrawer(prev => !prev)
@@ -26,14 +24,13 @@ export default function GameLayout() {
 				<GameHeader onMenuClick={handleDrawer} />
 			</div>
 
-			<aside className={`${isMobile ? 'hidden' : 'block'} h-full row-span-16 row-start-1 flex-col bg-cover lg:flex`}>
+			<aside className='hidden h-full row-span-16 row-start-1 flex-col bg-cover lg:flex'>
 				<AsideLayout />
 			</aside>
 			{isMobile && (
 				<Drawer open={openDrawer} onOpenChange={setOpenDrawer} swipeDirection='left'>
 					<DrawerContent className='h-full'>
-						<aside
-							className={`${openDrawer ? 'block' : 'block'} h-full row-span-16 row-start-1 flex-col bg-cover lg:flex`}>
+						<aside className='flex h-full flex-col bg-cover'>
 							<AsideLayout />
 						</aside>
 					</DrawerContent>
