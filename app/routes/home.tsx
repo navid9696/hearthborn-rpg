@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
 	return [{ title: 'New React Router App' }, { name: 'description', content: 'Welcome to React Router!' }]
 }
 const enemy = new Enemy(1, 'Enemy', 100, 100)
-const player = new Player('Player', 100, 100, 50, 50, 100)
+const player = new Player('Player', 100, 100, 100, 100, 100)
 export default function Home() {
 	return (
 		<div className='h-full'>

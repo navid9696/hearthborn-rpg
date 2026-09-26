@@ -1,24 +1,58 @@
 import { IconDroplet, IconHeart, IconApple, IconBatteryVertical } from '@tabler/icons-react'
-import { Divide as Hambuger } from 'hamburger-react'
+import { Divide as Hamburger } from 'hamburger-react'
 import ProgressIcon from './ProgressIcon'
 
 type GameHeaderProps = {
 	onMenuClick?: () => void
+	isOpen?: boolean
 }
 
-export default function GameHeader({ onMenuClick }: GameHeaderProps) {
+export default function GameHeader({ onMenuClick, isOpen }: GameHeaderProps) {
 	return (
-		<header className='h-full flex items-center justify-evenly gap-4 p-4'>
-			<button className='lg:hidden' onClick={onMenuClick}>
-				<Hambuger />
-			</button>
+		<header className='flex h-full items-center px-2'>
+			<div className='flex shrink-0 items-center justify-center lg:hidden'>
+				<Hamburger toggled={isOpen} toggle={onMenuClick} size={32} />
+			</div>
 
-			<IconHeart size={40} stroke={1} fill='currentColor' className='text-red-900 fill-red-600' />
-			<ProgressIcon Icon={IconBatteryVertical} value={1} colorClass='text-yellow-800 fill-yellow-500' />
-			<IconBatteryVertical size={45} stroke={1} fill='currentColor' className='text-yellow-800 fill-yellow-500' />
-			<ProgressIcon Icon={IconApple} value={50} colorClass='text-green-800 fill-green-500' />
-			<IconApple size={45} stroke={1} fill='currentColor' className='text-green-800 fill-green-500' />
-			<IconDroplet size={40} stroke={1} fill='currentColor' className='text-blue-700 fill-blue-400' />
+			<div className='flex h-full flex-1 items-center justify-evenly'>
+				<div className='flex flex-col md:flex-row items-center justify-center'>
+					<ProgressIcon Icon={IconHeart} value={50} minFill={15} maxFill={85} colorClass='text-red-900 fill-red-600' />
+					<span className='-mt-1.75 md:m-0 text-sm text-red-600'>11/100</span>
+				</div>
+
+				<div className='flex flex-col md:flex-row items-center justify-center'>
+					<ProgressIcon
+						Icon={IconBatteryVertical}
+						value={75}
+						minFill={15}
+						maxFill={85}
+						colorClass='text-yellow-800 fill-yellow-500'
+					/>
+					<span className='-mt-1.75 md:m-0 text-sm text-yellow-500'>22/100</span>
+				</div>
+
+				<div className='flex flex-col md:flex-row items-center justify-center'>
+					<ProgressIcon
+						Icon={IconDroplet}
+						value={25}
+						minFill={11}
+						maxFill={89}
+						colorClass='text-blue-700 fill-blue-400'
+					/>
+					<span className='-mt-1.75 md:m-0 text-sm text-blue-400'>33/100</span>
+				</div>
+
+				<div className='flex flex-col md:flex-row items-center justify-center'>
+					<ProgressIcon
+						Icon={IconApple}
+						value={66}
+						minFill={11}
+						maxFill={89}
+						colorClass='text-green-800 fill-green-500'
+					/>
+					<span className='-mt-1.75 md:m-0 text-sm text-green-500'>44/100</span>
+				</div>
+			</div>
 		</header>
 	)
 }

@@ -19,14 +19,14 @@ export default function GameLayout() {
 	return (
 		<div className='h-dvh grid grid-cols-1 grid-rows-16 gap-0 lg:grid-cols-5'>
 			<div
-				className='h-full col-span-1 col-start-1 row-start-1 bg-cover lg:col-span-4 lg:col-start-2'
+				className='h-full col-span-1 col-start-1 row-start-1 bg-cover lg:col-span-4 lg:col-start-2 border-b-3'
 				style={{ backgroundImage: `url(${woodenTexture})` }}>
-				<GameHeader onMenuClick={handleDrawer} />
+				<GameHeader onMenuClick={handleDrawer} isOpen={openDrawer} />
 			</div>
-
-			<aside className='hidden h-full row-span-16 row-start-1 flex-col bg-cover lg:flex'>
+			<aside className='hidden lg:flex h-full row-span-16 row-start-1 flex-col bg-cover '>
 				<AsideLayout />
 			</aside>
+
 			{isMobile && (
 				<Drawer open={openDrawer} onOpenChange={setOpenDrawer} swipeDirection='left'>
 					<DrawerContent className='h-full'>
@@ -43,7 +43,7 @@ export default function GameLayout() {
 				<Outlet />
 			</main>
 			<footer
-				className='h-full col-span-1 col-start-1 row-start-16 lg:col-span-4 lg:col-start-2'
+				className='h-full col-span-1 col-start-1 row-start-16 lg:col-span-4 lg:col-start-2 border-t-3'
 				style={{ backgroundImage: `url(${woodenTexture})` }}>
 				<GameFooter />
 			</footer>
