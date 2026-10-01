@@ -14,10 +14,12 @@ export default defineConfig({
 		watch: {
 			usePolling: true,
 			interval: 100,
+			ignored: ['**/node_modules/**', '**/.git/**'],
 		},
 		hmr: {
 			host: 'localhost',
 			port: 5173,
+			clientPort: 5173,
 			protocol: 'ws',
 		},
 	},
