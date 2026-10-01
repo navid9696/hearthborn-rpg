@@ -1,7 +1,11 @@
 import GameSideBar from './GameSideBar'
 import woodenTextureAside from '../../../../assets/ui/wooden-aside.webp'
+import { useGameStore } from '~/store/useGameStore'
 
 export default function AsideLayout() {
+	const playerName = useGameStore(state => state.player.name)
+	const playerLevel = useGameStore(state => state.player.level)
+
 	return (
 		<div className='grid h-full grid-rows-16'>
 			<div className='row-start-1 flex items-center justify-center border-b-3  bg-panel'>
@@ -21,8 +25,8 @@ export default function AsideLayout() {
 			</div>
 
 			<div className='row-start-16 flex items-center justify-center border-t-3 bg-panel'>
-				<span className='mr-2'>Player</span>
-				<span>Lv.10</span>
+				<span className='mr-2'>{playerName}</span>
+				<span>Lv.{playerLevel}</span>
 			</div>
 		</div>
 	)

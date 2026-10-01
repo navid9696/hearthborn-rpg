@@ -21,14 +21,11 @@ export default function ProgressIcon({
 	minFill = 0,
 	maxFill = 100,
 }: ProgressIconProps) {
-	
 	const normalized = Math.min(Math.max(value, minValue), maxValue)
 	const safeMinFill = Math.min(minFill, maxFill)
 	const safeMaxFill = Math.max(minFill, maxFill)
 	const progress = safeMinFill + ((normalized - minValue) / (maxValue - minValue)) * (safeMaxFill - safeMinFill)
 	const fillPercent = 100 - progress
-
-
 
 	return (
 		<div className='relative' style={{ width: size, height: size }}>

@@ -4,6 +4,7 @@ export class Player extends Character {
 	thirst: number
 	hunger: number
 	energy: number
+	maxEnergy: number
 	experience: number
 	level: number
 
@@ -14,6 +15,7 @@ export class Player extends Character {
 		thirst: number,
 		hunger: number,
 		energy: number,
+		maxEnergy: number,
 		experience: number,
 		level: number,
 		gold: number,
@@ -22,6 +24,7 @@ export class Player extends Character {
 		this.thirst = thirst
 		this.hunger = hunger
 		this.energy = energy
+		this.maxEnergy = maxEnergy
 		this.experience = experience
 		this.level = level
 		this.gold = gold

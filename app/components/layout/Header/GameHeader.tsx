@@ -2,6 +2,7 @@ import { IconDroplet, IconHeart, IconApple, IconBatteryVertical } from '@tabler/
 import { Divide as Hamburger } from 'hamburger-react'
 import ProgressIcon from './ProgressIcon'
 import { useEffect, useState } from 'react'
+import { useGameStore } from '~/store/useGameStore'
 
 type GameHeaderProps = {
 	onMenuClick?: () => void
@@ -10,6 +11,7 @@ type GameHeaderProps = {
 
 export default function GameHeader({ onMenuClick, isOpen }: GameHeaderProps) {
 	const [size, setSize] = useState(30)
+	const { energy, maxEnergy, health: currentHealth, maxHealth, thirst, hunger } = useGameStore(state => state.player)
 
 	useEffect(() => {
 		const update = () => {
@@ -32,48 +34,50 @@ export default function GameHeader({ onMenuClick, isOpen }: GameHeaderProps) {
 					<ProgressIcon
 						size={size}
 						Icon={IconHeart}
-						value={50}
+						value={currentHealth}
+						maxValue={maxHealth}
 						minFill={15}
 						maxFill={85}
 						colorClass='text-red-900 fill-red-600'
 					/>
-					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-red-600'>11/100</span>
+					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-red-600'>{`${currentHealth}/${maxHealth}`}</span>
 				</div>
 
 				<div className='flex flex-col md:flex-row items-center justify-center'>
 					<ProgressIcon
 						size={size}
 						Icon={IconBatteryVertical}
-						value={75}
+						value={energy}
+						maxValue={maxEnergy}
 						minFill={15}
 						maxFill={85}
 						colorClass='text-yellow-800 fill-yellow-500'
 					/>
-					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-yellow-500'>22/100</span>
+					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-yellow-500'>{`${energy}/${maxEnergy}`}</span>
 				</div>
 
 				<div className='flex flex-col md:flex-row items-center justify-center'>
 					<ProgressIcon
 						size={size}
 						Icon={IconDroplet}
-						value={25}
+						value={thirst}
 						minFill={11}
 						maxFill={89}
 						colorClass='text-blue-700 fill-blue-400'
 					/>
-					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-blue-400'>33/100</span>
+					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-blue-400'>{`${thirst}/100`}</span>
 				</div>
 
 				<div className='flex flex-col md:flex-row items-center justify-center'>
 					<ProgressIcon
 						size={size}
 						Icon={IconApple}
-						value={66}
+						value={hunger}
 						minFill={11}
 						maxFill={89}
 						colorClass='text-green-800 fill-green-500'
 					/>
-					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-green-500'>44/100</span>
+					<span className='-mt-1.75 md:m-0 text-sm md:text-lg text-green-500'>{`${hunger}/100`}</span>
 				</div>
 			</div>
 		</header>
