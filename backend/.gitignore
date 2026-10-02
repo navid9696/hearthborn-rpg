@@ -1,0 +1,60 @@
+# compiled output
+/dist
+/build
+
+# dependencies
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+/coverage
+/.nyc_output
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+/.idea
+/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# environment variables
+.env
+.env.*
+!.env.example
+
+# build artifacts
+*.tsbuildinfo
+*.tsbuildinfo.*
+
+# temp files
+tmp
+.temp
+**/*.tmp
+
+# cache
+.cache
+.parcel-cache
+.eslintcache
+
+# generated files
+docs
+**/*.generated.*
