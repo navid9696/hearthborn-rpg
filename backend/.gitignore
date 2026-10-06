@@ -58,3 +58,5 @@ tmp
 # generated files
 docs
 **/*.generated.*
+node_modules/
+dist/

@@ -1,6 +1,7 @@
-import GameSideBar from './GameSideBar'
+
 import woodenTextureAside from '../../../../assets/ui/wooden-aside.webp'
 import { useGameStore } from '~/store/useGameStore'
+import GameSideBar from './GameSideBar'
 
 export default function AsideLayout() {
 	const playerName = useGameStore(state => state.player.name)

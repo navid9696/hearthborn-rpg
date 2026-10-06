@@ -1,8 +1,9 @@
 import { IconDroplet, IconHeart, IconApple, IconBatteryVertical } from '@tabler/icons-react'
 import { Divide as Hamburger } from 'hamburger-react'
-import ProgressIcon from './ProgressIcon'
+
 import { useEffect, useState } from 'react'
 import { useGameStore } from '~/store/useGameStore'
+import ProgressIcon from './ProgressIcon'
 
 type GameHeaderProps = {
 	onMenuClick?: () => void
@@ -15,7 +16,7 @@ export default function GameHeader({ onMenuClick, isOpen }: GameHeaderProps) {
 
 	useEffect(() => {
 		const update = () => {
-			setSize(window.innerWidth < 768 ? 30 : 40)
+			setSize(window.innerWidth < 768 ? 25 : 35)
 		}
 
 		update()
