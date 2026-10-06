@@ -4,6 +4,7 @@
 
 # dependencies
 /node_modules
+**/node_modules
 
 # Logs
 logs
@@ -23,10 +24,12 @@ pids
 # Coverage directory used by tools like istanbul
 /coverage
 /.nyc_output
+**/coverage
 
 # OS files
 .DS_Store
 Thumbs.db
+**/.DS_Store
 
 # IDEs and editors
 /.idea
@@ -40,6 +43,8 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+**/.env
+**/.env.*
 
 # build artifacts
 *.tsbuildinfo
@@ -54,9 +59,13 @@ tmp
 .cache
 .parcel-cache
 .eslintcache
+**/.cache
 
 # generated files
 docs
 **/*.generated.*
 node_modules/
 dist/
+**/dist/
+**/*.log
+**/*.tmp
