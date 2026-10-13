@@ -1,5 +1,11 @@
-import { defineConfig } from 'prisma/config';
+import { definePrismaConfig } from 'prisma/config';
+import { defineConfig } from '@prisma/orm-postgres/config';
 
-export default defineConfig({
-  schema: 'prisma/schema.prisma',
+export default definePrismaConfig({
+  orm: defineConfig({
+    contract: './src/prisma/contract.prisma',
+  }),
+  skills: {
+    agents: ['claude'],
+  },
 });

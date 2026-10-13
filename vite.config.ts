@@ -7,10 +7,13 @@ export default defineConfig({
 	resolve: {
 		tsconfigPaths: true,
 	},
+	optimizeDeps: {
+		force: true,
+	},
 	server: {
 		host: '0.0.0.0',
 		port: 5173,
-		strictPort: true,
+		strictPort: false,
 		watch: {
 			usePolling: true,
 			interval: 100,
@@ -18,8 +21,6 @@ export default defineConfig({
 		},
 		hmr: {
 			host: 'localhost',
-			port: 5173,
-			clientPort: 5173,
 			protocol: 'ws',
 		},
 	},
